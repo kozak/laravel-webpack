@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/ui":{"type":null,"mount_options":[],"guestpath":"/home/vagrant/ui","hostpath":"E:/web_development/project/ui","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"E:/web_development/project/ui","disabled":false,"__vagrantfile":true}}}
