@@ -1,0 +1,13 @@
+{
+  "name": "ui",
+  "description": "Learning React",
+  "main": "",
+  "authors": [
+    "Mehrdad Shokri <shokri_m@hotmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "react": "^15.1.0"
+  }
+}
