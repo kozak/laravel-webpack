@@ -1,12 +1,17 @@
 {
   "private": true,
   "scripts": {
-    "prod": "gulp --production",
+    "prod": "gulp --prod",
     "dev": "gulp watch"
   },
   "devDependencies": {
+    "babelify": "^7.3.0",
+    "browserify": "^13.0.1",
     "gulp": "^3.9.1",
-    "laravel-elixir": "^5.0.0",
-    "bootstrap-sass": "^3.0.0"
+    "gulp-if": "^2.0.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-notify": "^2.2.0",
+    "vinyl-source-stream": "^1.1.0",
+    "yargs": "^4.7.1"
   }
 }

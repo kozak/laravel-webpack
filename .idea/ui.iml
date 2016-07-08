@@ -36,5 +36,19 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="react-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="browserify-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="vue-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="gulp-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="babelify-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="vue-resource-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="backbone-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="vue-router-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="jQuery-2.0.0" level="application" />
+    <orderEntry type="library" name="sweetalert-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="underscore-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="yargs-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="chartjs-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="jquery-DefinitelyTyped" level="application" />
   </component>
 </module>
