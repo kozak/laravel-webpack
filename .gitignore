@@ -8,11 +8,6 @@ bootstrap/cache/
 .env.*.php
 .env.php
 
-## JS dependencies
-/node_modules
-bower_components/
-
-
 ## OS
 # Windows image file caches
 Thumbs.db

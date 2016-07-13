@@ -3,37 +3,15 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Hello React</title>
-    <script src="https://fb.me/react-15.2.1.js"></script>
-    <script src="https://fb.me/react-dom-15.2.1.js"></script>
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
 </head>
-<body>
 <div id="example"></div>
-<script type="text/babel">
-
-    const HelloWorld = React.createClass({
-        render: function() {
-            return (
-                    <p>
-                        Hello,<input type="text" placeholder="Your name here"/>!
-                        It is {this.props.date.toTimeString()}
-                    </p>
-            );
-        }
-    });
-
-    ReactDOM.render(
-            <HelloWorld date={new Date()}/>,
-            document.getElementById('example')
-    );
-    setInterval(function() {
-        ReactDOM.render(
-                <HelloWorld date={new Date()}/>,
-                document.getElementById('example')
-        );
-    }, 500);
-
-
-</script>
+<body>
+<div id="example">
+</div>
+<script type="text/babel" src="js/components/TaskList.js"/>
+<script type="text/babel" src="js/components/TaskApp.js"/>
 </body>
 </html>

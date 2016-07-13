@@ -8,6 +8,6 @@
   "license": "MIT",
   "homepage": "",
   "dependencies": {
-    "react": "^15.1.0"
+    "react": "^15.2.1"
   }
 }

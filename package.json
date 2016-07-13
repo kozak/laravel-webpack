@@ -1,17 +1,22 @@
 {
   "private": true,
   "scripts": {
-    "prod": "gulp --prod",
-    "dev": "gulp watch"
+    "start": "webpack-dev-server",
+    "build": "webpack"
   },
   "devDependencies": {
-    "babelify": "^7.3.0",
-    "browserify": "^13.0.1",
-    "gulp": "^3.9.1",
-    "gulp-if": "^2.0.1",
-    "gulp-livereload": "^3.8.1",
-    "gulp-notify": "^2.2.0",
-    "vinyl-source-stream": "^1.1.0",
-    "yargs": "^4.7.1"
+    "css-loader": "^0.23.1",
+    "html-webpack-plugin": "^2.22.0",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-merge": "^0.14.0",
+    "webpack-validator": "^2.2.2"
+  },
+  "dependencies": {
+    "css-loader": "^0.23.1",
+    "style-loader": "^0.13.1"
   }
 }
