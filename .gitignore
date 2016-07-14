@@ -71,3 +71,6 @@ $RECYCLE.BIN/
 
 ##Vagrant
 .vagrant
+
+#Js
+/node_modules/*

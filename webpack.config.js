@@ -4,7 +4,8 @@ const merge = require('webpack-merge');	//for merging our webpack schema, it is 
 const parts = require('./resources/assets/libs/parts');
 const validate = require('webpack-validator');  // to check if webpack syntax is true
 const PATHS = {
-		app: path.join(__dirname, 'resources/assets/js/components'),
+		app: path.join(__dirname, 'resources/assets/js'),
+		style: path.join(__dirname, 'resources/assets/sass'),
 		build: path.join(__dirname, 'public/build')
 };
 
@@ -26,11 +27,13 @@ var config;
 switch (process.env.npm_lifecycle_event) {
 		case 'build':
 				config = merge(common,
-						parts.setupCSS(PATHS.app));
+						{devtool: 'source-map'},
+						parts.setupCSS(PATHS.style));
 				break;
 		default:
 				config = merge(common,
-						parts.setupCSS(PATHS.app),
+						{devtool: 'eval-source-map'},
+						parts.setupCSS(PATHS.style),
 						parts.devServer({
 								host: process.env.HOST,
 								port: process.env.PORT
