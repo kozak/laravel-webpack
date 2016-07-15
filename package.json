@@ -5,8 +5,12 @@
     "build": "webpack"
   },
   "devDependencies": {
+    "clean-webpack-plugin": "^0.1.9",
     "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.22.0",
+    "purecss": "^0.6.0",
+    "purifycss-webpack-plugin": "^2.0.3",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "style-loader": "^0.13.1",

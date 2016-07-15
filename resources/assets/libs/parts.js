@@ -1,5 +1,8 @@
 //this part is used to handle webpack-dev-server
 const webpack = require('webpack');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const PurifyCSSPlugin = require('purifycss-webpack-plugin');
 exports.devServer = function(options) {
 		return {
 				watchOptions: {
@@ -39,19 +42,26 @@ exports.minify = function() {
 		return {
 				plugins: [
 						new webpack.optimize.UglifyJsPlugin({
+								// Don't beautify output (enable for neater output)
+								beautify: false,
+								// Eliminate comments
+								comments: false,
+								// Compression specific options
 								compress: {
 										warnings: false,
-										/*beautify: false,
-										comments: false,
-										compress: {
-												warnings: false,
-												drop_console: true
-										},
-										mangle: {
-												except: ['$', 'webpackJsonp'],
-												screw_ie8: true,
-												keep_fnames: true
-										}*/
+										// Drop `console` statements
+										drop_console: true
+								},
+								// Mangling specific options
+								mangle: {
+										// Don't mangle $
+										except: ['$'],
+
+										// Don't care about IE8
+										screw_ie8 : true,
+
+										// Don't mangle function names
+										keep_fnames: true
 								}
 						})
 				]
@@ -81,4 +91,40 @@ exports.extractBundle = function(options) {
 						})
 				]
 		};
-}
+};
+exports.clean = function(path) {
+		return {
+				plugins: [
+						new CleanWebpackPlugin([path], {
+								root: process.cwd()
+						})
+				]
+		};
+};
+exports.extractCSS = function(paths) {
+		return {
+				module: {
+						loaders: [
+								{
+										test: /\.css$/,
+										loader: ExtractTextPlugin.extract('style', 'css'),
+										include: paths
+								}
+						]
+				},
+				plugins: [
+						// Output extracted CSS to a file
+						new ExtractTextPlugin('[name].[chunkhash].css')
+				]
+		};
+};
+exports.purifyCSS = function(paths) {
+		return {
+				plugins: [
+						new PurifyCSSPlugin({
+								basePath: process.cwd(),
+								paths: paths
+						})
+				]
+		}
+};

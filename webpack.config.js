@@ -6,7 +6,10 @@ const validate = require('webpack-validator');  // to check if webpack syntax is
 const pkg = require('./package.json');
 const PATHS = {
 		app: path.join(__dirname, 'resources/assets/js'),
-		style: path.join(__dirname, 'resources/assets/sass'),
+		style: [
+				path.join(__dirname, 'resources/assets/sass', 'main.css'),
+				path.join(__dirname, 'node_modules', 'purecss')
+		],
 		build: path.join(__dirname, 'public/build')
 };
 
@@ -14,11 +17,11 @@ const PATHS = {
 const common = {
 		entry: {
 				app: PATHS.app,
+				style: PATHS.style,
 				vendor: Object.keys(pkg.dependencies)
 		},
 		output: {
 				path: PATHS.build,
-				filename: '[name].js',
 				sourceMapFilename: '[file].map', // Default
 				devtoolModuleFilenameTemplate: 'webpack:///[resource-path]?[loaders]'
 		},
@@ -33,16 +36,28 @@ switch (process.env.npm_lifecycle_event) {
 		case 'build':
 				config = merge(common,
 						{devtool: 'source-map'},
+						{
+								output: {
+										path: PATHS.build,
+										filename: '[name].[chunkhash].js',
+										// This is used for require.ensure. The setup
+										// will work without but this is useful to set.
+										chunkFilename: '[chunkhash].js'
+								}
+						},
 						parts.setFreeVariable(
 								'process.env.NODE_ENV',
-								'production'
-						),
+								'production'),
 						parts.extractBundle({
 								name: 'vendor',
 								entries: ['react']
 						}),
 						parts.minify(),
-						parts.setupCSS(PATHS.style));
+						parts.extractCSS(PATHS.style),
+						parts.purifyCSS([PATHS.app]),
+						parts.clean(PATHS.build)
+				)
+				;
 				break;
 		default:
 				config = merge(common,
@@ -54,4 +69,4 @@ switch (process.env.npm_lifecycle_event) {
 						}));
 				break;
 }
-module.exports = validate(config);
+module.exports = validate(config, {quiet: true});

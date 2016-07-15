@@ -1,0 +1,20 @@
+[webpack-validator] Config is valid.
+http://localhost:8080/
+webpack result is served from /
+content is served from E:\web_development\project\ui
+404s will fallback to /index.html
+
+[1m[31mERROR in chunk app [entry]
+[name].[chunkhash].js
+Cannot use [chunkhash] for chunk in '[name].[chunkhash].js' (use [hash] instead)[39m[22m
+
+[1m[31mERROR in chunk style [entry]
+[name].[chunkhash].js
+Cannot use [chunkhash] for chunk in '[name].[chunkhash].js' (use [hash] instead)[39m[22m
+
+[1m[31mERROR in chunk vendor [entry]
+[name].[chunkhash].js
+Cannot use [chunkhash] for chunk in '[name].[chunkhash].js' (use [hash] instead)[39m[22m
+Child [1mhtml-webpack-plugin for "index.html"[22m:
+    
+webpack: bundle is now VALID.
