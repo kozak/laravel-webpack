@@ -158,3 +158,25 @@ exports.extractSass = function(paths) {
 				]
 		};
 };
+exports.setupImage = function(paths) {
+		return {
+				module: {
+						loaders: [
+								{
+										test: /\.(jpg|png)$/,
+										loader: 'url?limit=25000',
+										include: paths
+								}
+						]
+				}
+		};
+};
+exports.extractImage = function(paths) {
+		return {
+				module: {
+						test: /\.(jpg|png)$/,
+						loader: 'file?name=[path][name].[hash].[ext]',
+						include: PATHS.images
+				}
+		}
+};

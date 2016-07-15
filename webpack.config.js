@@ -8,6 +8,7 @@ const PATHS = {
 		app: path.join(__dirname, 'resources/assets/js'),
 		style: [
 				path.join(__dirname, 'resources/assets/sass', 'main.css'),
+				path.join(__dirname, 'resources/assets/sass'),
 				path.join(__dirname, 'node_modules', 'purecss')
 		],
 		build: path.join(__dirname, 'public/build')
