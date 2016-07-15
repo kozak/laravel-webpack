@@ -58,7 +58,7 @@ exports.minify = function() {
 										except: ['$'],
 
 										// Don't care about IE8
-										screw_ie8 : true,
+										screw_ie8: true,
 
 										// Don't mangle function names
 										keep_fnames: true
@@ -128,3 +128,16 @@ exports.purifyCSS = function(paths) {
 				]
 		}
 };
+exports.setupSass = function(paths) {
+		return{
+				module: {
+						loaders: [
+								{
+										test: /\.scss$/,
+										loader: ExtractTextPlugin.extract('style', 'css!sass'),
+										include: paths
+								}
+						]
+				},
+		}
+}
