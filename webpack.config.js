@@ -45,6 +45,7 @@ switch (process.env.npm_lifecycle_event) {
 										chunkFilename: '[chunkhash].js'
 								}
 						},
+						parts.extractSass(PATHS.style),
 						parts.setFreeVariable(
 								'process.env.NODE_ENV',
 								'production'),
@@ -62,6 +63,7 @@ switch (process.env.npm_lifecycle_event) {
 		default:
 				config = merge(common,
 						{devtool: 'eval-source-map'},
+						parts.setupSass(PATHS.style),
 						parts.setupCSS(PATHS.style),
 						parts.devServer({
 								host: process.env.HOST,

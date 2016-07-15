@@ -1,0 +1,2 @@
+webpackJsonp([0,3],{0:function(n,e,t){t(1);var o=t(153);document.body.appendChild(o())},153:function(n,e,t){t(!function(){var n=new Error('Cannot find module "../../sass/tempSass.scss"');throw n.code="MODULE_NOT_FOUND",n}());const o=function(){"use strict";var n=document.createElement("h1");return n.innerHTML="Hello master",n};n.exports=o}});
+//# sourceMappingURL=app.0f060a8dcb2268a8430d.js.map

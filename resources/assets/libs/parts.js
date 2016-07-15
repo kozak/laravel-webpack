@@ -129,7 +129,20 @@ exports.purifyCSS = function(paths) {
 		}
 };
 exports.setupSass = function(paths) {
-		return{
+		return {
+				module: {
+						loaders: [
+								{
+										test: /\.scss$/,
+										loaders: ['style', 'css', 'sass'],
+										include: paths
+								}
+						]
+				}
+		};
+};
+exports.extractSass = function(paths) {
+		return {
 				module: {
 						loaders: [
 								{
@@ -139,5 +152,9 @@ exports.setupSass = function(paths) {
 								}
 						]
 				},
-		}
-}
+				plugins: [
+// Output extracted CSS to a file
+						new ExtractTextPlugin('[name].[chunkhash].css')
+				]
+		};
+};

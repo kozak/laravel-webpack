@@ -1,3 +1,4 @@
+require('../../sass/tempSass.scss');
 const defaultExport = function() {
 		"use strict";
 		var element = document.createElement('h1');
