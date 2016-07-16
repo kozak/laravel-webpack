@@ -180,3 +180,16 @@ exports.extractImage = function(paths) {
 				}
 		}
 };
+exports.setupFont = function(paths) {
+		return {
+				module: {
+						test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+						loader: 'url',
+						query: {
+								limit: 50000,
+								mimetype: 'application/font-woff',
+								name: './fonts/[hash].[ext]'
+						}
+				}
+		}
+};

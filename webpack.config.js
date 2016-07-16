@@ -11,6 +11,7 @@ const PATHS = {
 				path.join(__dirname, 'resources/assets/sass'),
 				path.join(__dirname, 'node_modules', 'purecss')
 		],
+		images: path.join(__dirname, 'resources/assets/images'),
 		build: path.join(__dirname, 'public/build')
 };
 
